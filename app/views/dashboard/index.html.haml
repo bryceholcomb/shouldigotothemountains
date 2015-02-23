@@ -1,1 +1,6 @@
-.container should i go to the mountains?
+.title should i go to the mountains?
+.answer
+  - if @should_go
+    = render 'yes'
+  - else
+    = render 'no'
