@@ -19,6 +19,33 @@ class ReportBuilder
     )
   end
 
+  def vail
+    build_report(
+      mountain: Mountains::VAIL,
+      date: yesterday_report(Mountains::VAIL)['history']['observations'][0]['date']['pretty'],
+      snow_total: yesterday_report(Mountains::VAIL)['history']['observations'][0]['snow'].to_i,
+      nowcast: conditions_report(Mountains::VAIL)['current_observation']['nowcast']
+    )
+  end
+
+  def jackson
+    build_report(
+      mountain: Mountains::JACKSON,
+      date: yesterday_report(Mountains::JACKSON)['history']['observations'][0]['date']['pretty'],
+      snow_total: yesterday_report(Mountains::JACKSON)['history']['observations'][0]['snow'].to_i,
+      nowcast: ''
+    )
+  end
+
+  def tahoe
+    build_report(
+      mountain: Mountains::TAHOE,
+      date: yesterday_report(Mountains::TAHOE)['history']['observations'][0]['date']['pretty'],
+      snow_total: yesterday_report(Mountains::TAHOE)['history']['observations'][0]['snow'].to_i,
+      nowcast: ''
+    )
+  end
+
   private
 
   def build_report(options)
