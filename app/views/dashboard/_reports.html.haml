@@ -1,0 +1,5 @@
+#report_link.sub_answer check the reports
+
+.report_list
+  -@recent_reports.each do |report|
+    .report= "#{report.resort}: #{report.yesterday_snow_total} in."
