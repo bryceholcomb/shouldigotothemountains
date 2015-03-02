@@ -1,13 +1,10 @@
 namespace :reports do
-  desc 'Pull in last week of reports'
-  task update_reports: :environment  do
+  desc 'Scrape, build all Colorado reports from OpenSnow'
+  task scrape_colorado_reports: :environment  do
     Report.destroy_all
 
-    Mountains::MOUNTAINS.each do |mountain|
-      ReportBuilder.new.send(mountain.downcase)
-      puts "Generated report for: #{mountain}"
-    end
+    ColoradoScraper.new.scrape_reports
 
-    puts "Total: #{Report.count}"
+    puts "Added #{Report.count} new reports"
   end
 end
