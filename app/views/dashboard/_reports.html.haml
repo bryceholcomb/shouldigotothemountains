@@ -1,5 +1,6 @@
 #report_link.sub_answer check the reports
 
 .report_list
+  .report= "reports updated #{@report.report_date}"
   -@recent_reports.each do |report|
     .report= "#{report.mountain}: #{report.yesterday_snow_total} in."
