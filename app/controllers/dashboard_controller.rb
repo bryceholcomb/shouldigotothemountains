@@ -6,6 +6,6 @@ class DashboardController < ApplicationController
 
     @recent_reports = Report.all.order(yesterday_snow_total: :desc)
     @report = @recent_reports.first
-    @should_go = @report.yesterday_snow_total > 3
+    @should_go = @report.yesterday_snow_total > 2
   end
 end
