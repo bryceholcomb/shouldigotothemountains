@@ -15,3 +15,5 @@ gem 'httparty'
 gem 'mechanize', '2.7.3'
 
 gem 'rails_12factor', group: :production
+
+gem 'react-rails'
