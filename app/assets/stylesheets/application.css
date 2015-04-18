@@ -3,6 +3,10 @@
  *= require_self
  */
 
+ body {
+  background-image: url('snow.jpg');
+}
+
 .index {
   margin: auto;
   text-align: center;
