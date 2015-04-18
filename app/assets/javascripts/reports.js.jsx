@@ -4,20 +4,24 @@ var Reports = React.createClass({
   },
 
   componentWillMount: function() {
-    this._makeAjaxCallForData();
+    this._grabReportsData();
   },
 
   render: function() {
+    if (this.state.reports[0]) {
+      var lastUpdate = this.state.reports[0].report_date;
+    }
+
     return (
       <span>
-        <p class="link" onClick={this._toggleReports}>check the reports</p>
-
+        <p className="link" onClick={this._toggleReports}>check the reports</p>
         <div id="report_list">
-          { this.state.reports.map(function(report) {
-            return (
-              <p>{ report.mountain }, {report.yesterday_snow_total} inches</p>
-            );
-          })}
+            {
+               this.state.reports.map(function(report) {
+                return (<p className='report'>{ report.mountain }, {report.yesterday_snow_total} inches</p> );
+              })
+            }
+          <p className='report'> last update: { lastUpdate } </p>
         </div>
       </span>
     );
@@ -29,7 +33,7 @@ var Reports = React.createClass({
     $(thing).toggle();
   },
 
-  _makeAjaxCallForData: function() {
+  _grabReportsData: function() {
     $.ajax({
       url: this.props.url,
       success: function(reports) {
