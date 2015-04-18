@@ -28,9 +28,9 @@ var Reports = React.createClass({
   },
 
   _toggleReports: function() {
-    var thing = document.getElementById("report_list");
+    var reportList = document.getElementById("report_list");
 
-    $(thing).toggle();
+    $(reportList).toggle();
   },
 
   _grabReportsData: function() {
