@@ -11,7 +11,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'spring',        group: :development
-gem 'httparty'
 gem 'mechanize', '2.7.3'
 
 gem 'rails_12factor', group: :production
