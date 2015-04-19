@@ -16,11 +16,11 @@ var Reports = React.createClass({
       <span>
         <p className="link" onClick={this._toggleReports}>check the reports</p>
         <div id="report_list">
-            {
-               this.state.reports.map(function(report) {
-                return (<p className='report'>{ report.mountain }, {report.yesterday_snow_total} inches</p> );
-              })
-            }
+          {
+             this.state.reports.map(function(report) {
+              return (<p className='report'>{ report.mountain }, {report.yesterday_snow_total} inches</p> );
+            })
+          }
           <p className='report'> last update: { lastUpdate } </p>
         </div>
       </span>
