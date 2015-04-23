@@ -35,7 +35,7 @@ var Reports = React.createClass({
 
   _grabReportsData: function() {
     $.ajax({
-      url: this.props.url,
+      url: '/index.json',
       success: function(reports) {
         this.setState({reports: reports});
       }.bind(this),
@@ -45,11 +45,3 @@ var Reports = React.createClass({
     });
   }
 });
-
-var doIt = function () {
-  React.render(
-    <Reports url='/index.json'/>, document.getElementById('reports')
-  );
-};
-
-$(document).ready(doIt);
