@@ -158,6 +158,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mechanize (= 2.7.3)
+  minitest
   pg
   rails (= 4.1.6)
   rails_12factor

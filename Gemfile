@@ -6,13 +6,22 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails'
-gem 'byebug'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'spring',        group: :development
 gem 'mechanize', '2.7.3'
-
-gem 'rails_12factor', group: :production
-
 gem 'react-rails'
+
+group :production do
+  gem 'rails_12factor'
+end
+
+group :test do
+  gem "minitest"
+end
+
+group :development, :test do
+  gem 'spring'
+  gem 'byebug'
+end
+
